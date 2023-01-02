@@ -1,0 +1,154 @@
+/* body {
+    height: 100%; */
+    /* background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(5,0,0,0) 100%); 
+    background-color: white; */
+    /* width: 100%; */
+       
+    /* background: linear-gradient(0deg, rgb(137, 137, 137) 0%, rgb(255, 255, 255)100%);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; */
+    
+
+    /* background-image: url(../images/gg.gif);
+    background-size: 300px 300px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;  */
+
+    /* margin: 5%;
+} */
+
+
+body {	
+	margin: 5%;
+    background: linear-gradient(to bottom, #ffffff, #b9b9b9 );
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+body:before{
+	content:'';
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: -1;
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3)rgb(85, 85, 85)f2 75%);
+}
+
+a {
+    color: black;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: transparent;
+    text-shadow: 0 0 3px black;
+    transition: 0.20s;
+    -webkit-transition: 0.20s;
+    -moz-transition: 0.20s;
+    -ms-transition: 0.20s;
+    -o-transition: 0.20s;
+}
+
+@font-face {
+    font-family: Avenir-reg;
+    src: url(../fonts/AvenirLTStd-Roman.otf);
+}
+
+@font-face {
+    font-family: Avenir-bold;
+    src: url(../fonts/AvenirLTStd-Black.otf);
+}
+
+@font-face {
+    font-family: Geeza-pro;
+    src: url(../fonts/GeezaPro.ttc);
+}
+
+
+p {
+    font-family: Avenir-reg;
+    font-size: 1.3em;
+    line-height: 1.32em;
+}
+
+#boldwords {
+    font-family: Avenir-bold;
+    background-color: transparent;
+    margin: -0.2em;
+}
+
+#boldarabic {
+    font-weight: 800;
+}
+
+#years {
+    font-family: Avenir-bold;
+    font-size: 0.6em;
+    /* line-height: 1em; */
+    background-color: transparent;
+    vertical-align: top;
+}
+
+#link-mail {
+    font-family: Avenir-reg;
+    font-size: 0.6em;
+    vertical-align: top;
+    line-height: 1em;
+}
+
+h1 {
+    font-family: Geeza-pro;
+    font-size: 1.8em;
+}
+
+#arabic-text {
+    text-align: right;
+    font-size: 0.8em;
+    line-height: 1.8em;
+}
+
+.overlay {
+    position:fixed;
+    background-image: url(../images/gg.gif);
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 250px 250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    pointer-events: none;
+}
+
+/* .side-word-l {
+    position: fixed;
+    writing-mode:sideways-lr;
+    text-orientation: mixed;
+    margin-left: -3%;
+    top: 40%;
+}
+
+#side-word-text-l {
+    color: green;
+    font-family: Avenir-bold;
+    font-size: 0.9em;
+}
+
+.side-word-r {
+    position: fixed;
+    writing-mode:sideways-rl;
+    text-orientation: mixed;
+    margin-left: 91%;
+    top: 35%;
+}
+
+#side-word-text-r {
+    color: green;
+    font-family: Avenir-bold;
+    font-size: 0.9em;
+} */
