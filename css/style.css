@@ -73,7 +73,7 @@ a:hover {
 p {
     font-family: Avenir-reg;
     font-size: 1.3em;
-    line-height: 1.32em;
+    line-height: 1.4em;
 }
 
 #boldwords {
@@ -92,6 +92,8 @@ p {
     /* line-height: 1em; */
     background-color: transparent;
     vertical-align: top;
+    display:inline-block;
+    line-height: 1.4em;
 }
 
 #link-mail {
@@ -148,12 +150,12 @@ h2 {
 @media screen and (min-width: 1200px) {
     p {
         font-family: Avenir-reg;
-        font-size: 1.5em;
+        font-size: 1.6em;
         line-height: 1.4em;
     }
     h1 {
         font-family: Geeza-pro;
-        font-size: 2em;
+        font-size: 2.1em;
         line-height: 1.4em;
     }
 }
