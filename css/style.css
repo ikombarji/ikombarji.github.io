@@ -187,3 +187,98 @@ h2 {
     font-family: Avenir-bold;
     font-size: 0.9em;
 } */
+
+/* ---------- Gallery page ---------- */
+
+.gallery-page {
+    margin: 2%;
+}
+
+.gallery-page .container-fluid {
+    padding: 0;
+}
+
+/* no back link, no captions */
+.gallery-page .back-link,
+.gallery figcaption {
+    display: none;
+}
+
+/* photos stacked edge to edge, aligned left, no gaps */
+.gallery {
+    margin: 0;
+}
+
+.gallery figure {
+    margin: 0;
+}
+
+/* Each photo gets a maximum height (--h). The photo shrinks to fit it
+   and keeps its shape. There are two size patterns that run side by side:
+   pattern A is used by photos 1, 3, 5, 7... (a cycle of 3 sizes)
+   pattern B is used by photos 2, 4, 6, 8... (a cycle of 4 sizes)
+   Because the two patterns have different lengths, the result looks random. */
+.gallery img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: var(--h, 80vh);
+}
+
+/* pattern A */
+.gallery figure:nth-child(6n+1) img { --h: 78vh; }
+.gallery figure:nth-child(6n+3) img { --h: 38vh; }
+.gallery figure:nth-child(6n+5) img { --h: 60vh; }
+
+/* pattern B */
+.gallery figure:nth-child(8n+2) img { --h: 30vh; }
+.gallery figure:nth-child(8n+4) img { --h: 70vh; }
+.gallery figure:nth-child(8n+6) img { --h: 48vh; }
+.gallery figure:nth-child(8n+8) img { --h: 85vh; }
+
+/* Portrait photos are playful too, but kept within a range: whatever size the
+   pattern above gives them, they are never less than 50vh tall (minimum)
+   and never more than 70vh tall (maximum). Change the two numbers to adjust. */
+.gallery figure.portrait img { max-height: clamp(50vh, var(--h, 80vh), 70vh); }
+
+/* Optional: force a photo to a size by adding small, medium or large
+   to its <figure> tag in gallery.html, e.g. <figure class="landscape small"> */
+.gallery figure.small img  { --h: 35vh; }
+.gallery figure.medium img { --h: 55vh; }
+.gallery figure.large img  { --h: 80vh; }
+
+/* Phones: a phone screen is narrow, so a height limit does nothing there and every
+   photo ends up full width. Instead, size the photos by WIDTH. Everything stays
+   aligned to the left. Landscape and portrait photos each run through two repeating
+   patterns of different lengths, so the sizes look random. Portrait photos have a
+   minimum width (55%) so they never get too small, and a maximum width (80%) so they never get too big. */
+@media screen and (max-width: 600px) {
+    .gallery img,
+    .gallery figure:nth-child(n) img {
+        max-height: none;
+        max-width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    /* landscape: pattern A (cycle of 3) and pattern B (cycle of 4) */
+    .gallery figure.landscape:nth-child(3n+1) img { width: 62%; }
+    .gallery figure.landscape:nth-child(3n+2) img { width: 88%; }
+    .gallery figure.landscape:nth-child(3n+3) img { width: 45%; }
+    .gallery figure.landscape:nth-child(4n+2) img { width: 52%; }
+    .gallery figure.landscape:nth-child(4n+4) img { width: 78%; }
+
+    /* portrait: pattern A (cycle of 3) and pattern B (cycle of 4), 55% to 80% */
+    .gallery figure.portrait:nth-child(3n+1) img { width: 80%; }
+    .gallery figure.portrait:nth-child(3n+2) img { width: 62%; }
+    .gallery figure.portrait:nth-child(3n+3) img { width: 72%; }
+    .gallery figure.portrait:nth-child(4n+2) img { width: 55%; }
+    .gallery figure.portrait:nth-child(4n+4) img { width: 78%; }
+
+    /* forced sizes */
+    .gallery figure.small img  { width: 42%; }
+    .gallery figure.medium img { width: 64%; }
+    .gallery figure.large img  { width: 92%; }
+    .gallery figure.portrait.small img { width: 55%; }
+}
