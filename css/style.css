@@ -312,3 +312,68 @@ html:has(.gallery-page) {
         right: 9px;
     }
 }
+
+/* ---------- Project lists: paired English / Arabic rows ---------- */
+.entry {
+    align-items: baseline;      /* first line of English and Arabic sit on the same baseline */
+}
+
+/* same line spacing in both languages, no extra space between entries */
+.entry p,
+.entry h1 {
+    margin: 0;
+    line-height: 1.75rem;
+}
+
+.entry-head p {
+    font-weight: bold;
+}
+
+.entry-gap {
+    margin-top: 1.75rem;        /* one blank line before "Selected Projects" */
+}
+
+/* manual line breaks only apply on wide screens, where every entry takes the same number of lines in both languages */
+.brk {
+    display: none;
+}
+
+@media screen and (min-width: 1400px) {
+    .brk {
+        display: inline;
+    }
+
+    .entry p,
+    .entry h1 {
+        white-space: nowrap;
+    }
+}
+
+/* a long one-line entry must not widen its column and squeeze the other language */
+.entry .col-sm {
+    min-width: 0;
+}
+
+/* the small year / date labels must not make a line taller than the others */
+.entry mark {
+    line-height: 1;
+}
+
+/* ---------- Intro text ---------- */
+.link-bold {
+    font-family: Avenir-bold;
+}
+
+.intro-en {
+    margin-bottom: 2.5rem;
+}
+
+.intro-ar {
+    margin-bottom: 3.5rem;
+}
+
+/* breathing space above the footer */
+.site-footer {
+    margin-top: 5rem;
+    padding-bottom: 2rem;
+}
